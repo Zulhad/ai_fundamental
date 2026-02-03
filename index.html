@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Features Infographic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            padding: 40px;
+            background: #f8f9ff;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+        
+        .platform {
+            padding: 40px;
+            border-right: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .platform:nth-child(2n) {
+            border-right: none;
+        }
+        
+        .platform:hover {
+            background: #f8f9ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid;
+        }
+        
+        .platform.chatgpt .platform-header { border-color: #10a37f; }
+        .platform.claude .platform-header { border-color: #d4876f; }
+        .platform.gemini .platform-header { border-color: #4285f4; }
+        .platform.copilot .platform-header { border-color: #0078d4; }
+        
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin-right: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .platform.chatgpt .platform-icon { background: #10a37f; }
+        .platform.claude .platform-icon { background: #d4876f; }
+        .platform.gemini .platform-icon { background: #4285f4; }
+        .platform.copilot .platform-icon { background: #0078d4; }
+        
+        .platform-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .platform-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .features {
+            list-style: none;
+        }
+        
+        .feature-item {
+            margin-bottom: 18px;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .feature-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .platform.chatgpt .feature-item:before { background: #10a37f; }
+        .platform.claude .feature-item:before { background: #d4876f; }
+        .platform.gemini .feature-item:before { background: #4285f4; }
+        .platform.copilot .feature-item:before { background: #0078d4; }
+        
+        .feature-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.05em;
+        }
+        
+        .feature-desc {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 3px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .footer h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .footer p {
+            font-size: 1.15em;
+            line-height: 1.7;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .platforms {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform {
+                border-right: none !important;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Udah Jadi Bagian Kerja Kita<br>Sadar Nggak Sadar 🤖</h1>
+            <p>Mau tidak mau, kita harus beradaptasi dengan perkembangan teknologi ini</p>
+        </div>
+        
+        <div class="intro">
+            <p>
+                <strong>Dari autocorrect di keyboard, rekomendasi konten di sosmed, sampai tools yang bantu kita bikin konten marketing</strong> — 
+                AI udah ada di mana-mana. Bukan lagi soal "mau pakai atau nggak", tapi <strong>"seberapa efektif kita manfaatin"</strong>. 
+                Yuk kenali fitur-fitur AI yang bisa bantu kerjaan digital marketing kita lebih produktif!
+            </p>
+        </div>
+        
+        <div class="platforms">
+            <!-- ChatGPT -->
+            <div class="platform chatgpt">
+                <div class="platform-header">
+                    <div class="platform-icon">🤖</div>
+                    <div>
+                        <div class="platform-title">ChatGPT</div>
+                        <div class="platform-subtitle">by OpenAI</div>
+                    </div>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <div class="feature-name">ChatGPT Search</div>
+                        <div class="feature-desc">Cari info real-time langsung dari chat</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">DALL-E Image Generator</div>
+                        <div class="feature-desc">Bikin gambar dari deskripsi text</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Canvas Mode</div>
+                        <div class="feature-desc">Edit dokumen & kode bareng AI</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Custom GPTs</div>
+                        <div class="feature-desc">Bikin AI khusus sesuai kebutuhan</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Voice Conversation</div>
+                        <div class="feature-desc">Ngobrol langsung pakai suara</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Data Analysis</div>
+                        <div class="feature-desc">Upload file Excel/CSV buat dianalisis</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Claude -->
+            <div class="platform claude">
+                <div class="platform-header">
+                    <div class="platform-icon">∞</div>
+                    <div>
+                        <div class="platform-title">Claude</div>
+                        <div class="platform-subtitle">by Anthropic</div>
+                    </div>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <div class="feature-name">Deep Research</div>
+                        <div class="feature-desc">Riset mendalam otomatis dengan sumber lengkap</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Artifacts</div>
+                        <div class="feature-desc">Generate dokumen, website, visualisasi data</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Analysis Tool</div>
+                        <div class="feature-desc">Analisis file PDF, spreadsheet, gambar</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Projects</div>
+                        <div class="feature-desc">Workspace khusus dengan context tersimpan</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Vision Analysis</div>
+                        <div class="feature-desc">Analisis gambar, screenshot, infografis</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Long Context</div>
+                        <div class="feature-desc">Baca & pahami dokumen panjang sekaligus</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Gemini -->
+            <div class="platform gemini">
+                <div class="platform-header">
+                    <div class="platform-icon">✦</div>
+                    <div>
+                        <div class="platform-title">Gemini</div>
+                        <div class="platform-subtitle">by Google</div>
+                    </div>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <div class="feature-name">Deep Research</div>
+                        <div class="feature-desc">Riset komprehensif dengan multi-source</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Imagen Generator</div>
+                        <div class="feature-desc">Bikin gambar berkualitas tinggi</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Google Workspace Integration</div>
+                        <div class="feature-desc">Langsung akses Gmail, Drive, Docs, Sheets</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Multimodal Input</div>
+                        <div class="feature-desc">Proses text, gambar, video sekaligus</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">YouTube Integration</div>
+                        <div class="feature-desc">Analisis konten video YouTube</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Real-time Info</div>
+                        <div class="feature-desc">Akses Google Search untuk info terkini</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Copilot -->
+            <div class="platform copilot">
+                <div class="platform-header">
+                    <div class="platform-icon">⚡</div>
+                    <div>
+                        <div class="platform-title">Copilot</div>
+                        <div class="platform-subtitle">by Microsoft</div>
+                    </div>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <div class="feature-name">Designer</div>
+                        <div class="feature-desc">AI design tool terintegrasi</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Microsoft 365 Integration</div>
+                        <div class="feature-desc">Otomasi di Word, Excel, PowerPoint, Outlook</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Image Creator</div>
+                        <div class="feature-desc">Generate gambar powered by DALL-E</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Edge Browser Assistant</div>
+                        <div class="feature-desc">Browsing assistant saat browsing</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Conversation Styles</div>
+                        <div class="feature-desc">Creative, Balanced, atau Precise mode</div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-name">Web Grounding</div>
+                        <div class="feature-desc">Jawaban dengan sumber real-time</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h2>Saatnya Mulai Explore! 🚀</h2>
+            <p>
+                Gak perlu langsung master semua tools. Pilih satu yang paling relevan sama kebutuhan kamu, 
+                coba fitur-fiturnya, dan rasain sendiri gimana AI bisa bikin kerjaan digital marketing jadi lebih efisien. 
+                <strong>Yang penting: mulai sekarang!</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
